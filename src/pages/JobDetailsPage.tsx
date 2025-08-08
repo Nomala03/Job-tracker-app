@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import type {Job,} from '../types/job'
+import type {Job} from '../types/job'
 
 const JobDetailsPage = () => {
   const { id } = useParams();
