@@ -17,7 +17,7 @@ const Navbar = () => {
           <Link to="/add-job" className="hover:text-gray-300">Add Job</Link>
           <button
             onClick={handleLogout}
-            className="bg-red-500 px-3 py-1 rounded hover:bg-red-600"
+            className="bg-gray-600 px-3 py-1 rounded hover:bg-gray-500"
           >
             Logout
           </button>
