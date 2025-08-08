@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import HomePage from './pages/HomePage'
 import JobDetailsPage from './pages/JobDetailsPage'
+import NotFoundPage from './pages/NotFoundPage'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/jobs/:id" element={<JobDetailsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>  
       </Router> 
