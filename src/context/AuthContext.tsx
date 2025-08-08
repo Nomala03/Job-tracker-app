@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // On mount, load token and user from localStorage
+    
     const savedToken = getAuthToken();
     const savedUser = getCurrentUser();
     if (savedToken && savedUser) {
