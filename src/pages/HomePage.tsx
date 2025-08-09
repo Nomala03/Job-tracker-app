@@ -31,10 +31,7 @@ const HomePage = () => {
     }
     fetchJobs()
       .then(saveJobs)
-      .catch((err) => {
-        console.error(err);
-        alert('Failed to load jobs');
-      });
+      .catch(console.error);
   }, []);
 
   const saveJobs = (updated: Job[]) => {
@@ -105,6 +102,7 @@ const HomePage = () => {
           onSubmit={handleAdd}
           className="bg-white rounded p-6 shadow mb-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
         >
+          
           <input
             type="text"
             placeholder="Company"
