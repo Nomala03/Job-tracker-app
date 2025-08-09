@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:5000';
 
 // Helper to check HTTP response status
 async function checkResponse(response: Response) {

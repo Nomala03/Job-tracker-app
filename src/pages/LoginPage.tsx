@@ -1,21 +1,19 @@
+// src/pages/LoginPage.tsx
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {loginUser} from '../api/api';
-import { useAuth } from '../context/AuthContext'
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     try {
-      const { token, user } = await loginUser(username, password);
-      login(token, user)
+      await loginUser(username, password);
       navigate('/home');
     } catch (err: any) {
       setError(err.message || 'Login failed');
