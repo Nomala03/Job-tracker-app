@@ -13,7 +13,7 @@ function App() {
 
   return (
       <Router>
-        <div className="min-h-screen bg-gray-100 text-gray-900">
+        <div className="min-h-screen bg-gradient-to-r text-gray-900">
           <Navbar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -21,8 +21,6 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/home" element={<HomePage />}/>
             <Route path="/jobs/:id" element={<JobDetailsPage />}/>
-
-            {/* Catch-all for 404 */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>  

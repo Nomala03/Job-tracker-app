@@ -23,7 +23,7 @@ const LoginPage = () => {
     <section className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md max-w-md w-full"
+        className="bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-8 max-w-md w-full mx-auto"
       >
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
         {error && (
