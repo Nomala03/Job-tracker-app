@@ -30,19 +30,20 @@ const RegisterPage = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md max-w-md w-full"
-      >
-        <h1 className="text-2xl font-bold mb-6 text-center">Register</h1>
+    <section className="min-h-screen flex items-center justify-center bg-gray-200 px-4">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <form
+          onSubmit={handleSubmit}
+          className=" max-w-md w-full space-y-4"
+        >
+        <h1 className="text-2xl font-bold mb-6 text-center text-gray-600">Register</h1>
         {error && (
-          <p className="mb-4 text-red-600 text-center font-semibold">{error}</p>
+          <p className="mb-4 text-red-500 text-center font-semibold">{error}</p>
         )}
         <input
           type="text"
           placeholder="Username"
-          className="w-full p-3 border rounded mb-4"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -51,7 +52,7 @@ const RegisterPage = () => {
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-3 border rounded mb-4"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -60,7 +61,7 @@ const RegisterPage = () => {
         <input
           type="password"
           placeholder="Confirm Password"
-          className="w-full p-3 border rounded mb-6"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
           required
@@ -68,17 +69,18 @@ const RegisterPage = () => {
         />
         <button
           type="submit"
-          className="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700 transition"
+          className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:opacity-90 transition"
         >
           Register
         </button>
         <p className="mt-4 text-center">
           Already have an account?{' '}
-          <Link to="/login" className="text-blue-600 underline">
+          <Link to="/login" className="text-blue-700 underline">
             Log In
           </Link>
         </p>
-      </form>
+        </form>
+      </div>
     </section>
   );
 };
