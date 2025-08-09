@@ -20,46 +20,48 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white bg-opacity-80 backdrop-blur-md rounded-lg shadow-lg p-8 max-w-md w-full mx-auto"
-      >
-        <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
-        {error && (
-          <p className="mb-4 text-red-600 text-center font-semibold">{error}</p>
-        )}
-        <input
-          type="text"
-          placeholder="Username"
-          className="w-full p-3 border rounded mb-4"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          autoFocus
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full p-3 border rounded mb-6"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          minLength={6}
-        />
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition"
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-500 via-pink-400 to-orange-400 px-4">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-md w-full mx-auto space-y-4"
         >
-          Log In
-        </button>
-        <p className="mt-4 text-center">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-blue-600 underline">
+        <h1 className="text-2xl font-bold mb-6 text-center text-gray-600">Login</h1>
+          {error && (
+            <p className="mb-4 text-red-500 text-center font-semibold">{error}</p>
+          )}
+          <input
+            type="text"
+            placeholder="Username"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            autoFocus
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            minLength={6}
+          />
+          <button
+            type="submit"
+            className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            Log In
+          </button>
+          <p className="mt-4 text-center">
+            Don't have an account?{' '}
+            <Link to="/register" className="text-blue-700 underline">
             Register
-          </Link>
-        </p>
-      </form>
+            </Link>
+          </p>
+        </form>
+      </div>
     </section>
   );
 };
