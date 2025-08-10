@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
       <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-4 flex justify-between items-center">
         <Link to="/" className="text-xl font-bold px-4">
-          Job Tracker
+          Job-Jotter
         </Link> 
           <div className="flex items-center gap-4">
           <Link to="/home" className="hover:underline text-white text-xl">Home</Link>
