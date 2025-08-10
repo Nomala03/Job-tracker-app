@@ -94,22 +94,21 @@ const HomePage = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gray-100 px-4 py-8">
+    <section className="min-h-screen bg-gray-200 px-4 py-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">My Job Applications</h1>
+        <h1 className="text-3xl font-bold mb-6 tracking-tight text-center text-gray-800 drop-shadow-lg">My Job Applications</h1>
 
         <form
           onSubmit={handleAdd}
-          className="bg-white rounded p-6 shadow mb-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+          className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-md border border-white/40 mb-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
         >
-          
           <input
             type="text"
             placeholder="Company"
             value={form.company}
             onChange={(e) => setForm({ ...form, company: e.target.value })}
             required
-            className="p-2 border rounded"
+            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <input
             type="text"
@@ -117,12 +116,12 @@ const HomePage = () => {
             value={form.role}
             onChange={(e) => setForm({ ...form, role: e.target.value })}
             required
-            className="p-2 border rounded"
+            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <select
             value={form.status}
             onChange={(e) => setForm({ ...form, status: e.target.value as JobStatus })}
-            className="p-2 border rounded"
+            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           >
             <option value="applied">Applied</option>
             <option value="interviewed">Interviewed</option>
@@ -133,41 +132,41 @@ const HomePage = () => {
             value={form.dateApplied}
             onChange={(e) => setForm({ ...form, dateApplied: e.target.value })}
             required
-            className="p-2 border rounded"
+            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <input
             type="text"
             placeholder="Duties (optional)"
             value={form.duties}
             onChange={(e) => setForm({ ...form, duties: e.target.value })}
-            className="p-2 border rounded"
+            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <input
             type="text"
             placeholder="Requirements (optional)"
             value={form.requirements}
             onChange={(e) => setForm({ ...form, requirements: e.target.value })}
-            className="p-2 border rounded"
+            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <textarea
             placeholder="Notes (optional)"
             value={form.notes}
             onChange={(e) => setForm({ ...form, notes: e.target.value })}
-            className="p-2 border rounded md:col-span-2 lg:col-span-3"
+            className="p-3 border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition border md:col-span-2 lg:col-span-3"
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 md:col-span-2 lg:col-span-3"
+            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-md hover:opacity-90 transition text-white py-2 rounded md:col-span-2 lg:col-span-3"
           >
             Add Job
           </button>
         </form>
 
-        <div className="flex flex-wrap gap-2 justify-between items-center mb-4">
+        <div className="flex flex-wrap gap-2 justify-between items-center mb-6">
           <input
             type="text"
             placeholder="Search company or role..."
-            className="p-2 border rounded w-full md:w-60"
+            className="p-2 border rounded-lg focus:border-purple-400 w-full md:w-60"
             onChange={(e) => updateSearchParam('q', e.target.value)}
             defaultValue={searchParams.get('q') || ''}
           />
@@ -177,8 +176,8 @@ const HomePage = () => {
               <button
                 key={status}
                 onClick={() => updateSearchParam('status', status)}
-                className={`px-3 py-1 rounded text-sm capitalize ${
-                  filterStatus === status ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                className={`px-3 py-1 rounded text-sm capitalize font-medium shadow-sm transition ${
+                  filterStatus === status ? 'bg-purple-500 text-white' : 'bg-white/70 border border-gray-200 text-gray-700 hover:bg-purple-50'
                 }`}
               >
                 {status}
@@ -186,7 +185,7 @@ const HomePage = () => {
             ))}
             <button
               onClick={() => updateSearchParam('status', '')}
-              className="text-sm underline text-gray-500"
+              className="text-sm underline text-gray-600 hover:text-gray-800"
             >
               Clear Filter
             </button>
@@ -196,7 +195,7 @@ const HomePage = () => {
             <select
               value={sort}
               onChange={(e) => updateSearchParam('sort', e.target.value)}
-              className="p-2 border rounded"
+              className="p-3 border border-gray-200 rounded-lg focus:ring-purple-400 focus:border-purple-400 transition"
             >
               <option value="desc">Newest first</option>
               <option value="asc">Oldest first</option>
@@ -206,18 +205,18 @@ const HomePage = () => {
 
         <div className="grid gap-4">
           {filteredJobs.length === 0 && (
-            <p className="text-gray-500">No jobs match your search/filter.</p>
+            <p className="text-gray-600 text-center">No jobs match your search/filter.</p>
           )}
 
           {filteredJobs.map((job) => (
             <div
               key={job.id}
-              className="bg-white p-4 rounded shadow flex flex-col md:flex-row justify-between items-start gap-2"
+              className="bg-white/80 backdrop-blur-sm border border-white/40 p-5 rounded-xl shadow-sm hover:shadow-md transition flex flex-col md:flex-row justify-between items-start gap-3"
             >
               <div>
                 <Link
                   to={`/jobs/${job.id}`}
-                  className="text-blue-600 font-semibold text-lg hover:underline"
+                  className="text-purple-600 font-semibold text-lg hover:underline"
                 >
                   {job.role} @ {job.company}
                 </Link>
@@ -228,7 +227,7 @@ const HomePage = () => {
 
               <div className="flex gap-3 items-center">
                 <span
-                  className={`px-3 py-1 rounded-full text-sm font-medium ${statusColors[job.status]}`}
+                  className={`px-3 py-1 rounded-full text-sm font-medium shadow-sm ${statusColors[job.status]}`}
                 >
                   {job.status}
                 </span>
