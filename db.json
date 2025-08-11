@@ -1,6 +1,36 @@
 {
   "users": [
-    { "id": 1, "username": "test", "password": "123456" }
+    {
+      "id": "1",
+      "username": "test",
+      "password": "123456"
+    },
+    {
+      "id": "068b",
+      "username": "Nomala",
+      "password": "Nomalanga03"
+    },
+    {
+      "id": "6672",
+      "username": "Nomala",
+      "password": "Nomalanga03"
+    },
+    {
+      "id": "1226",
+      "username": "Nomala",
+      "password": "Nomalanga03"
+    }
   ],
-  "jobs": []
+  "jobs": [
+    {
+      "id": "55c29e6d-dd00-4fbb-b626-ba09e9516fd8",
+      "company": "Pickled Pepper Company",
+      "role": "Promoter",
+      "status": "interviewed",
+      "dateApplied": "2025-05-07",
+      "duties": "1. Talk to potential customers and explain benefits/features",
+      "requirements": "",
+      "notes": ""
+    }
+  ]
 }

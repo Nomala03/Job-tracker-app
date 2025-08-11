@@ -108,7 +108,7 @@ const HomePage = () => {
             value={form.company}
             onChange={(e) => setForm({ ...form, company: e.target.value })}
             required
-            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+            className="w-full p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <input
             type="text"
@@ -116,12 +116,12 @@ const HomePage = () => {
             value={form.role}
             onChange={(e) => setForm({ ...form, role: e.target.value })}
             required
-            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+            className="w-full p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <select
             value={form.status}
             onChange={(e) => setForm({ ...form, status: e.target.value as JobStatus })}
-            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+            className="w-full p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           >
             <option value="applied">Applied</option>
             <option value="interviewed">Interviewed</option>
@@ -132,27 +132,27 @@ const HomePage = () => {
             value={form.dateApplied}
             onChange={(e) => setForm({ ...form, dateApplied: e.target.value })}
             required
-            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+            className="w-full p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <input
             type="text"
             placeholder="Duties (optional)"
             value={form.duties}
             onChange={(e) => setForm({ ...form, duties: e.target.value })}
-            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+            className="w-full p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <input
             type="text"
             placeholder="Requirements (optional)"
             value={form.requirements}
             onChange={(e) => setForm({ ...form, requirements: e.target.value })}
-            className="p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+            className="w-full p-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
           />
           <textarea
             placeholder="Notes (optional)"
             value={form.notes}
             onChange={(e) => setForm({ ...form, notes: e.target.value })}
-            className="p-3 border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition border md:col-span-2 lg:col-span-3"
+            className="w-full p-3 border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition border md:col-span-2 lg:col-span-3"
           />
           <button
             type="submit"
@@ -185,7 +185,7 @@ const HomePage = () => {
             ))}
             <button
               onClick={() => updateSearchParam('status', '')}
-              className="text-sm underline text-gray-600 hover:text-gray-800"
+              className="w-full text-sm underline text-gray-600 hover:text-gray-800"
             >
               Clear Filter
             </button>

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-
+import ProtectedRoute from './components/ProtectedRoute'
 import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
@@ -19,8 +19,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/home" element={<HomePage />}/>
-            <Route path="/jobs/:id" element={<JobDetailsPage />}/>
+            <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>}/>
+            <Route path="/jobs/:id" element={<ProtectedRoute><JobDetailsPage /></ProtectedRoute>}/>
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>  
